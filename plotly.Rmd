@@ -14,13 +14,16 @@ knitr::opts_chunk$set(echo = TRUE)
 library(ggplot2)
 library(forecast)
 library(plotly)
+
+# Colour theme
 theme_set(theme_classic())
 
 # Subset data
-nottem_small <- window(nottem, start=c(1920, 1), end=c(1925, 12))  # subset a smaller timewindow
+nottem_small <- window(nottem, start=c(1920, 1), end=c(1925, 12))
 
-# Plot
-gg <- ggseasonplot(AirPassengers) + labs(title="Seasonal plot: International Airline Passengers")
+# ggplot
+gg <- ggseasonplot(AirPassengers) + labs(title="International Airline Passengers")
 
+# plotly
 ggplotly(gg)
 ```

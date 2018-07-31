@@ -1,15 +1,15 @@
 ---
-title: "Plotly"
+title: "plotly"
 author: "Thiago Almeida"
-date: "27 de julho de 2018"
-output: html_document
+date: "31 de julho de 2018"
+output: ioslides_presentation
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-
+## Code
 ```{r cars, message=FALSE}
 library(ggplot2)
 library(forecast)
@@ -23,7 +23,11 @@ nottem_small <- window(nottem, start=c(1920, 1), end=c(1925, 12))
 
 # ggplot
 gg <- ggseasonplot(AirPassengers) + labs(title="International Airline Passengers")
+```
 
+## Plotly
+```{r plotly}
 # plotly
 ggplotly(gg)
 ```
+
